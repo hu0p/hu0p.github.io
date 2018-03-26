@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="I'm a front-end web developer and designer. I'll put something here soon. Stay tuned.">
+  <meta name="author" content="Logan Houp">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta property="og:title" content="Logan Houp's Personal Site">
+  <meta property="og:description" content="I'm a front-end web developer and designer. I'll put something here soon. Stay tuned.">
+  <meta property="og:image" content="http://loganhoup.com/thumbnail.png">
+  <meta property="og:url" content="http://loganhoup.com">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Logan Houp | Front-end Dev</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      color: #fff
+    }
+
+    .loader-section {
+      position: fixed;
+      top: 0;
+      width: 51%;
+      height: 100%;
+      background: #2c3e50;
+      z-index: 1000;
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0)
+    }
+
+    .loader-section.section-left {
+      left: 0
+    }
+
+    .loader-section.section-right {
+      right: 0
+    }
+
+    .loaded .loader-section.section-left {
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+      -webkit-transition: all .7s .3s cubic-bezier(.645, .045, .355, 1);
+      transition: all .7s .3s cubic-bezier(.645, .045, .355, 1)
+    }
+
+    .loaded .loader-section.section-right {
+      -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      transform: translateX(100%);
+      -webkit-transition: all .7s .3s cubic-bezier(.645, .045, .355, 1);
+      transition: all .7s .3s cubic-bezier(.645, .045, .355, 1)
+    }
+
+    .loaded #loader {
+      opacity: 0;
+      -webkit-transition: all .3s ease-out;
+      transition: all .3s ease-out
+    }
+
+    img {
+      border-radius: 50%;
+      border: 1px solid aliceblue;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      animation: slide-in 1s .25s forwards;
+      max-width: 195px;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    @keyframes slide-in {
+      0% {
+        transform: translateY(250px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      font-family: Oswald, sans-serif;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 5.5rem;
+      text-transform: uppercase;
+      z-index: 1;
+      margin-top: 15px;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      margin-bottom: 5px
+    }
+
+    h2 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      font-size: 28px;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      margin-bottom: 45px
+    }
+
+    .sauce {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .content--animation {
+      animation: fade-in 2.5s 1s forwards;
+      opacity: 0;
+    }
+
+    .contact {
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 25px;
+      padding: 7.5px 12.5px;
+      font-size: 22px;
+      text-align: center;
+      cursor: pointer;
+      outline: 0;
+      color: #fff;
+      background: 0;
+      border: 1px solid aliceblue;
+      border-radius: 3px;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      text-decoration: none
+    }
+
+    .contact a {
+      text-decoration: none;
+      color: snow
+    }
+
+    .contact a:hover {
+      color: #fff;
+    }
+
+    .contact:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      transition: all 1s
+    }
+
+    .prettycolors {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #2c3e50, #fd746c, #ff8235, #e73827);
+      background-repeat: no-repeat;
+      background-size: 1000% 1000%;
+      animation: gradient 240s ease infinite
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0 0
+      }
+      50% {
+        background-position: 100% 100%
+      }
+      100% {
+        background-position: 0 0
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loader"></div>
+  <div class="loader-section section-left"></div>
+  <div class="loader-section section-right"></div>
+  <div class="prettycolors">
+    <div class="sauce">
+      <img src="/img/Logan-min-sq.jpg" alt="Picture of Logan">
+      <div class="content--animation">
+        <h1>Logan Houp</h1>
+        <h2>Front-end Developer</h2>
+        <button class="contact">
+          <a class="btn js-NoBots" data-mailto-user="houplogan" data-mailto-domain="gmail.com">Contact Me</a>
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script defer>
+    WebFont.load({
+        google: {
+          families: ["Oswald:700", "Open Sans"],
+          text: "CcomntigaeSPORTFOLIOWEBSITE"
+        }
+      }),
+      function (e) {
+        var t = e.createElement("script"),
+          a = e.scripts[0];
+        t.src = "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js", t.async = !0, a.parentNode.insertBefore(
+          t, a)
+      }(document)
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('loaded');
+      [].forEach.call(document.getElementsByClassName("js-NoBots"), function (el) {
+        el.setAttribute("href", "mailto:" + el.getAttribute("data-mailto-user") + "@" + (el.getAttribute(
+          "data-mailto-domain") || window.location.host))
+      })
+    })
+  </script>
+  <noscript>
+    <style>
+      .btn {
+        display: none
+      }
+
+      .loader-section {
+        display: none
+      }
+    </style>
+  </noscript>
+</body>
+
+</html>
